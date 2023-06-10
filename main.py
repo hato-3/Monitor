@@ -14,7 +14,7 @@ async def Monitoring():
         '''
         res = subprocess.run(["ping", host, "-n", "5"], stdout=subprocess.PIPE)
         '''
-        await asyncio.sleep(60)
+        await asyncio.sleep(150)
 
 
 keep_alive()
