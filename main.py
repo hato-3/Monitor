@@ -1,5 +1,5 @@
-import subprocess
 import asyncio
+import requests
 from server import keep_alive
 
 hosts = ["https://osubot.kottey.repl.co",
@@ -9,7 +9,12 @@ hosts = ["https://osubot.kottey.repl.co",
 async def Monitoring():
     while True:
         for host in hosts:
+            '''
             subprocess.run(["curl", host])
+            print("\n")
+            '''
+            response = requests.get(host)
+            print(response.text)
             print("\n")
         '''
         res = subprocess.run(["ping", host, "-n", "5"], stdout=subprocess.PIPE)
